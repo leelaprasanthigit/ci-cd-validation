@@ -65,7 +65,6 @@ jobs:
 # SECTION 3: DOCKER BUILD AND DEPLOY
 # ==================================================
 
-  ### PRACTICE CHALLENGE 3 ###
   # TASK: Add Docker build and push steps that create an image tagged with both 'latest' 
   # and the Git commit SHA, then push to Docker Hub or GitHub Container Registry.
   # YOUR CODE HERE

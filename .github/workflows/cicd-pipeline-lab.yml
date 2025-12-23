@@ -14,7 +14,6 @@ name: Data Pipeline CI/CD
 # targeting main branch. Add path filtering to only trigger when files in 'src/' or 'tests/' 
 # directories change.
 # YOUR CODE HERE
-____________________________________
 # SOLUTION CODE #
 on:
   push:
@@ -27,10 +26,7 @@ on:
     paths:
       - 'src/**'
       - 'tests/**'
-# END SOLUTION CODE #
-____________________________________
-
-
+# END SOLUTION CODE 
 # ==================================================
 # SECTION 2: BUILD AND TEST JOB
 # ==================================================
@@ -40,7 +36,6 @@ jobs:
   # TASK: Create a build job that sets up Python 3.9, installs requirements from requirements.txt, 
   # and runs pytest with coverage reporting. The job should fail if tests don't pass.
   # YOUR CODE HERE
-  ____________________________________
   # SOLUTION CODE #
   build-and-test:
     runs-on: ubuntu-latest
@@ -64,7 +59,6 @@ jobs:
       run: |
         pytest tests/ --cov=src/ --cov-report=xml --cov-fail-under=80
   # END SOLUTION CODE #
-  ____________________________________
 
 
 # ==================================================
@@ -75,7 +69,6 @@ jobs:
   # TASK: Add Docker build and push steps that create an image tagged with both 'latest' 
   # and the Git commit SHA, then push to Docker Hub or GitHub Container Registry.
   # YOUR CODE HERE
-  ____________________________________
   # SOLUTION CODE #
   docker-build:
     needs: build-and-test
@@ -106,7 +99,6 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
   # END SOLUTION CODE #
-  ____________________________________
 
 
 # ==================================================

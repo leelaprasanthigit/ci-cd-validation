@@ -58,8 +58,7 @@ jobs:
 
       run: |
 
-        pytest tests/ --cov=src/ --cov-report=xml
-
+        PYTHONPATH=$PWD pytest tests/ --cov=src/ --cov-report=xml
         
 
     - name: Build Docker image
